@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smriti Singh - Cybersecurity Professional | Solutions Engineer">
+    <title>Smriti Singh | Cybersecurity Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #c084fc;
+            --primary-light: #e9d5ff;
+            --primary-dark: #9333ea;
+            --accent: #ec4899;
+            --bg-dark: #0f0718;
+            --bg-card: #1a0b2e;
+            --text-light: #e9d5ff;
+            --text-gray: #a78bfa;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 7, 24, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(192, 132, 252, 0.2);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(192, 132, 252, 0.1);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0f0718 0%, #1a0b2e 50%, #2d1b4e 100%);
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(192, 132, 252, 0.15), transparent);
+            border-radius: 50%;
+            top: -250px;
+            right: -250px;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.1), transparent);
+            border-radius: 50%;
+            bottom: -200px;
+            left: -200px;
+        }
+        
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .hero .intro {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .social-links a {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(192, 132, 252, 0.3);
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.5);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        section .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* About Section */
+        .about-text {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .experience-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(192, 132, 252, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(192, 132, 252, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .experience-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .experience-card .company {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .experience-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .experience-card li {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--text-light);
+        }
+        
+        .experience-card li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .skill-category {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(192, 132, 252, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.3);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-category li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            border-bottom: 1px solid rgba(192, 132, 252, 0.1);
+        }
+        
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .project-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(192, 132, 252, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(192, 132, 252, 0.3);
+        }
+        
+        .project-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .project-card .date {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .project-card .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(192, 132, 252, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 15px;
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+        
+        /* Publications Section */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .publication-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(192, 132, 252, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(192, 132, 252, 0.3);
+        }
+        
+        .publication-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            line-height: 1.4;
+        }
+        
+        .publication-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .publication-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .publication-card a:hover {
+            color: var(--primary);
+        }
+        
+        /* Leadership Section */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .leadership-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(192, 132, 252, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .leadership-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.3);
+        }
+        
+        .leadership-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .leadership-card .organization {
+            color: var(--text-gray);
+            margin-bottom: 0.3rem;
+        }
+        
+        .leadership-card .date {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .leadership-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 15px;
+            border: 1px solid rgba(192, 132, 252, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.3);
+        }
+        
+        .contact-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+        
+        .cta-box {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(192, 132, 252, 0.1), rgba(236, 72, 153, 0.1));
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+        }
+        
+        .cta-box h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            color: var(--text-gray);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(192, 132, 252, 0.2);
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            
+            section h2 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid,
+            .publications-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Smriti Singh</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Writing</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Smriti Singh</h1>
+            <p class="tagline">Cybersecurity Professional | Solutions Engineer | Bridging Technical Expertise with Client Success</p>
+            <p class="intro">
+                5+ years of cybersecurity experience with a unique strength: translating complex security concepts 
+                into actionable insights. I help organizations implement security solutions while building genuine 
+                client relationships and driving successful outcomes.
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/smriti04/" target="_blank">LinkedIn</a>
+                <a href="https://medium.com/@smritisingh677" target="_blank">Medium</a>
+                <a href="mailto:smritisingh677@gmail.com">Email Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p class="section-subtitle">Cybersecurity professional seeking Solutions Engineer and Customer Success roles</p>
+        <div class="about-text">
+            <p>
+                I'm a cybersecurity professional with a Master's in Information Security and 5+ years of hands-on 
+                experience in vulnerability assessment, security analysis, and client relationship management. 
+                My journey has taken me from technical security analysis at Accenture to managing enterprise 
+                client engagements—and I've discovered my greatest strength lies at the intersection of technical 
+                expertise and human connection.
+            </p>
+            <p>
+                What sets me apart? I don't just identify security vulnerabilities—I explain them in ways that 
+                resonate with everyone from developers to C-level executives. I build trust with clients, coordinate 
+                cross-functional teams, and ensure successful implementations. I thrive in roles that combine 
+                technical credibility with exceptional communication.
+            </p>
+            <p>
+                Currently seeking Solutions Engineer, Technical Account Manager, or Customer Success roles where 
+                I can leverage my security expertise and communication strengths to help organizations implement 
+                solutions successfully and achieve their security objectives.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <p class="section-subtitle">Highlights from my cybersecurity career</p>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <h3>Cybersecurity Engineer</h3>
+                <p class="company">Exploit Strike | Newark, DE</p>
+                <ul>
+                    <li>Investigated and responded to security incidents using Splunk and MITRE ATT&CK, improving response time by 30% through automated detection and triaging</li>
+                    <li>Monitored cloud security controls across AWS, Azure, and Google Cloud, ensuring continuous compliance with SOC 2, ISO 27001, GDPR, HIPAA, and PCI-DSS</li>
+                    <li>Conducted security audits and risk assessments, identifying vulnerabilities using Nessus and Qualys while providing actionable remediation strategies to clients</li>
+                    <li>Served as primary technical liaison between security teams and business stakeholders, translating technical findings into business risk language</li>
+                </ul>
+            </div>
+            
+            <div class="experience-card">
+                <h3>Security Engineer</h3>
+                <p class="company">Accenture Inc | India</p>
+                <ul>
+                    <li>Managed incident detection and response through SIEM tools (Splunk), successfully reducing mean detection time by 35% and improving operational efficiency</li>
+                    <li>Conducted vulnerability assessments and penetration testing using Nessus, Burp Suite, OpenVAS, and Metasploit, ensuring enterprise systems remained hardened against emerging threats</li>
+                    <li>Led team of 6 security analysts across multiple concurrent client engagements, managing project delivery, quality assurance, and client communications</li>
+                    <li>Communicated complex security findings to development teams and business stakeholders, providing clear remediation guidance that resulted in 90% client retention rate</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="cta-box" style="margin-top: 3rem;">
+            <h3>Interested in my full background?</h3>
+            <p>Contact me for my detailed resume including additional roles, achievements, and references.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <p class="section-subtitle">Tools, technologies, and frameworks I work with</p>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Security Tools</h3>
+                <ul>
+                    <li>Nessus</li>
+                    <li>Qualys</li>
+                    <li>Burp Suite</li>
+                    <li>Veracode</li>
+                    <li>Wireshark</li>
+                    <li>Metasploit</li>
+                    <li>OpenVAS</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>SIEM & Monitoring</h3>
+                <ul>
+                    <li>Splunk</li>
+                    <li>MITRE ATT&CK Framework</li>
+                    <li>Incident Response</li>
+                    <li>Threat Detection</li>
+                    <li>Log Analysis</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Cloud & Platforms</h3>
+                <ul>
+                    <li>AWS (Amazon Web Services)</li>
+                    <li>Microsoft Azure</li>
+                    <li>Google Cloud Platform</li>
+                    <li>Cloud Security Monitoring</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Compliance Frameworks</h3>
+                <ul>
+                    <li>NIST Cybersecurity Framework</li>
+                    <li>ISO 27001</li>
+                    <li>SOC 2</li>
+                    <li>GDPR</li>
+                    <li>HIPAA</li>
+                    <li>PCI-DSS</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Programming & Scripting</h3>
+                <ul>
+                    <li>Python (Scripting & Automation)</li>
+                    <li>Bash</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Professional Skills</h3>
+                <ul>
+                    <li>Client Relationship Management</li>
+                    <li>Team Leadership (7+ members)</li>
+                    <li>Technical Communication</li>
+                    <li>Stakeholder Management</li>
+                    <li>Cross-functional Collaboration</li>
+                    <li>Agile/Scrum Methodologies</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Certifications</h3>
+                <ul>
+                    <li>Certified Ethical Hacker (CEH v11)</li>
+                    <li>Microsoft Azure Fundamentals (AZ-900)</li>
+                    <li>IBM Agile Development & Scrum</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Academic Projects</h2>
+        <p class="section-subtitle">Research and practical applications in cybersecurity and data science</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Financial Services Vulnerability Assessment Program</h3>
+                <p class="date">February 2024 - May 2024</p>
+                <p>
+                    Led comprehensive enterprise-wide vulnerability management initiative for financial services clients, 
+                    conducting systematic security assessments across multiple client infrastructures. Identified and 
+                    prioritized critical security gaps, developed remediation strategies, and collaborated with client 
+                    teams to improve overall security posture.
+                </p>
+                <p>
+                    <strong>Impact:</strong> Reduced critical vulnerabilities by 45% and significantly improved clients' 
+                    compliance ratings with financial regulatory requirements.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Nessus</span>
+                    <span class="tech-tag">Qualys</span>
+                    <span class="tech-tag">Risk Assessment</span>
+                    <span class="tech-tag">NIST Framework</span>
+                    <span class="tech-tag">Compliance</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Insulin Insight: Data-Driven Predictions of Diabetes Onset</h3>
+                <p class="date">September 2023 - December 2023</p>
+                <p>
+                    Developed an innovative machine learning predictive model to identify early indicators of diabetes 
+                    onset in high-risk populations. Utilized advanced data analytics techniques to process and analyze 
+                    large healthcare datasets, implementing multiple ML algorithms to achieve accurate predictions.
+                </p>
+                <p>
+                    <strong>Process:</strong> Led data collection, cleaning, and preprocessing of comprehensive patient 
+                    health records, lifestyle factors, and genetic information. Applied feature engineering and model 
+                    optimization to improve prediction accuracy.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Data Analytics</span>
+                    <span class="tech-tag">Healthcare Data</span>
+                    <span class="tech-tag">Predictive Modeling</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <h2>Publications & Writing</h2>
+        <p class="section-subtitle">Cybersecurity insights and thought leadership on Medium</p>
+        <div class="publications-grid">
+            <div class="publication-card">
+                <h3>When AI Lies Better Than Humans: The Rise of Deepfakes in Corporate Cybercrime</h3>
+                <p>
+                    An in-depth exploration of how deepfake technology is transforming corporate cybercrime. 
+                    This article examines real-world cases where AI-generated voices and videos have been used 
+                    to commit fraud, the technical mechanisms behind deepfake attacks, and practical defense 
+                    strategies organizations can implement. Covers detection tools, security policies, and the 
+                    future of authentication in an era where seeing and hearing is no longer believing.
+                </p>
+                <p><strong>Key Topics:</strong> Deepfake attacks, voice cloning, synthetic media detection, corporate security, AI threats</p>
+                <a href="https://medium.com/meetcyber/when-ai-lies-better-than-humans-the-rise-of-deepfakes-in-corporate-cybercrime-cdb650d2b0bd" target="_blank">Read Article →</a>
+            </div>
+            
+            <div class="publication-card">
+                <h3>Free Code Isn't Free: The Security Debt of Open-Source and Automation</h3>
+                <p>
+                    A comprehensive analysis of hidden security risks in modern software development practices. 
+                    Explores how open-source dependencies, CI/CD pipelines, and automation create invisible 
+                    complexity and security debt. Discusses Software Bill of Materials (SBOM), supply chain 
+                    security, and practical strategies for managing technical debt while maintaining development 
+                    velocity. Essential reading for DevSecOps professionals and security teams working with modern 
+                    development practices.
+                </p>
+                <p><strong>Key Topics:</strong> Open-source security, supply chain risks, SBOM, DevSecOps, automation vulnerabilities</p>
+                <a href="https://medium.com/meetcyber/free-code-isnt-free-the-security-debt-of-open-source-and-automation-4eafa1ef805b" target="_blank">Read Article →</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://medium.com/@smritisingh677" target="_blank" class="social-links" style="display: inline-block;">
+                <span>View All Articles on Medium</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership">
+        <h2>Leadership & Involvement</h2>
+        <p class="section-subtitle">Community engagement and mentorship</p>
+        <div class="leadership-grid">
+            <div class="leadership-card">
+                <h3>Social Media Ambassador</h3>
+                <p class="organization">Indian Graduate Student Association (IGSA)</p>
+                <p class="date">University of Delaware | May 2023 - April 2024</p>
+                <p>
+                    Developed and executed comprehensive social media strategy across multiple platforms to engage 
+                    the graduate student community. Created compelling visual content, managed posting schedules, 
+                    and fostered community engagement. Coordinated with organizational teams to promote events 
+                    and initiatives, significantly increasing visibility and student participation.
+                </p>
+            </div>
+            
+            <div class="leadership-card">
+                <h3>iBuddy Mentor</h3>
+                <p class="organization">International Student Mentorship Program</p>
+                <p class="date">University of Delaware | August 2023 - May 2024</p>
+                <p>
+                    Served as primary mentor and resource for 10+ incoming international graduate students, 
+                    providing comprehensive guidance on academic planning, course selection, professor recommendations, 
+                    housing decisions, and navigating life in the United States. Offered ongoing support for 
+                    both academic and personal challenges, helping students successfully transition to university 
+                    life and make informed career decisions. Built lasting relationships while facilitating their 
+                    integration into the university community.
+                </p>
+            </div>
+            
+            <div class="leadership-card">
+                <h3>Administrative Secretary</h3>
+                <p class="organization">Graduates in Electrical and Computer Engineering</p>
+                <p class="date">University of Delaware | August 2023 - May 2024</p>
+                <p>
+                    Served as primary communication link between members, executive team, faculty advisors, and 
+                    external partners. Scheduled and facilitated regular meetings, maintained accurate organizational 
+                    records, and assisted in developing policies and procedures to ensure smooth operations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <p class="section-subtitle">Open to Solutions Engineer, Technical Account Manager, and Customer Success opportunities</p>
+        <div class="contact-content">
+            <p>
+                I'm actively seeking roles where I can leverage my cybersecurity expertise and exceptional 
+                communication skills to help organizations implement security solutions and achieve their objectives. 
+                If you're looking for someone who bridges technical knowledge with client success, let's talk.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:smritisingh677@gmail.com">smritisingh677@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>LinkedIn</strong>
+                    <a href="https://www.linkedin.com/in/smriti04/" target="_blank">Connect with me</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Medium</strong>
+                    <a href="https://medium.com/@smritisingh677" target="_blank">Read my articles</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Professional Membership</strong>
+                    Member - Women in Cybersecurity (WiCyS)
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <h3>Let's Talk Business</h3>
+                <p>
+                    Interested in discussing opportunities? Request my detailed resume or let's connect to explore 
+                    how I can contribute to your team's success.
+                </p>
+                <a href="mailto:smritisingh677@gmail.com?subject=Let's%20Connect" class="social-links" style="display: inline-block;">
+                    <span>Contact Me: smritisingh677@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Smriti Singh | Cybersecurity Professional</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Bridging Technical Expertise with Client Success</p>
+    </footer>
+</body>
+</html>
